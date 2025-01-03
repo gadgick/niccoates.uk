@@ -1,0 +1,191 @@
+body, html {
+    height: 100vh;
+    margin: 0;
+}
+
+body {
+    font-family: 'Sarabun', sans-serif;
+    display: flex; /* Use flex to enable flexbox properties */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    min-height: 100vh; /* Ensure body takes at least the full viewport height */
+    padding: 0; /* Remove any padding that might push content */
+}
+
+a{
+    color: #4b5563;
+    text-decoration: none;
+    font-weight: 400;
+    border-bottom: 1px solid #4b5563;
+}
+
+a:hover{
+    color: #111827;
+    border-color: #111827;
+}
+
+.container {
+    width: 100%;
+    max-width: 560px;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.4s forwards ease-out;
+}
+
+h1{
+    font-size: 38px;
+    font-weight: 700;
+    margin: 30px 0 0 0;
+    color: #111827;
+    letter-spacing: -0.5px;
+}
+
+h2{
+    font-size: 16px;
+    font-weight: 300;
+    margin: 5px 0;
+    color: #6b7280;
+    letter-spacing: 0.5px;
+}
+
+h3{
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+    color: #111827;
+    letter-spacing: 0.5px;
+    border-top: 1px dotted #e5e7eb;
+    padding-top: 20px;
+}
+
+.button {
+    float: right;
+    border: 0;
+    border-radius: 30px;
+    padding: 7px 13px 9px 13px;
+    text-align: center;
+    background: #e5e7eb;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: -5px;
+}
+
+.button:hover {
+    background: #111827;
+    color: #f9fafb;
+}
+
+section{
+    margin-top: 20px;
+}
+
+p{
+    font-size: 16px;
+    color: #6b7280;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+    font-weight: 300;
+    display: inline-block;
+    width: 100%;
+    word-spacing: 3px;
+    white-space: pre-wrap;
+    margin: 10px 0;
+}
+
+.experience {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #6b7280;
+    font-weight: 300;
+}
+
+.company {
+    flex: 0 0 30%;
+    font-weight: 500;
+    color: #111827;
+    padding-top: 5px;
+}
+
+.details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.role-date, .details > div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.role {
+    margin-right: 30px;
+}
+
+.date{
+    color: #9ca3af;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 1s forwards ease-out;
+}
+
+@media (max-width: 600px) {
+    body {
+        justify-content: flex-start; /* Reset vertical centering for mobile */
+    }
+    .container {
+        width: 100%;
+        padding: 15px;
+        margin: 30px auto 0 auto;
+    }
+    p, .experience{
+        font-size: 14px;
+    }
+    .experience {
+        flex-direction: column;
+        display: flex;
+    }
+    .company, .details {
+        width: 100%;
+    }
+    .details {
+        width: 100%;
+    }
+    .details .role-date, .details > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0;
+    }
+}
+
+@media (max-height: 768px) and (orientation: landscape) {
+    body {
+        justify-content: flex-start; /* Align to top when height is limited */
+    }
+    .container {
+        margin-top: 30px; /* Add some top margin for better visibility */
+        max-height: calc(100vh - 60px); /* Prevent content from being cut off */
+        overflow-y: auto; /* Allow scrolling if content is too tall */
+    }
+}
